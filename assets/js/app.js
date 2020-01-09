@@ -112,7 +112,7 @@ function visualize(theData) {
     .attr("class", "yAxis")
     .attr("transform", "translate(" + (margin + labelArea) + ", 0)");
 
-  var theCircles = svg.selectAll("g theCircles").data(theData).enter();
+    var theCircles = svg.selectAll("g theCircles").data(theData).enter();
 
     theCircles
         .append("circle")
@@ -123,8 +123,15 @@ function visualize(theData) {
 
     theCircles
         .append("text")
-        .attr("x", function(d) {return xScale(d[curX]) - circRadius/2})
-        .attr("y",  function(d) {return yScale(d[curY]) + circRadius/2})
+        .attr("x", function(d) {return xScale(d[curX]) - circRadius/2 - 2.5})
+        .attr("y",  function(d) {return yScale(d[curY]) + circRadius/2 - 1})
         .text(function(d) {return d.abbr})
-        .attr("font-size", "12px")
+        .attr("font-size", "10px")
+
+    svg
+        .append("text")
+        .call(xAxis)             
+        .attr("transform","translate(" + (width/2) + " ," + (height + margin) + ")")
+        .style("text-anchor", "middle")
+        .text("In Poverty (%)");
 }
