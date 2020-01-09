@@ -1,19 +1,20 @@
-// Define Plot Margins & Dimensions
+// Define Plot Width
 var width = parseInt(d3.select("#scatter").style("width"));
 
-// Designate the height of the graph
+// Define Plot Height
 var height = width - width / 3.9;
 
-// Margin spacing for graph
+// Define Plot Margins
 var margin = 20;
 
-// space for placing words
+// Define Area for Axis Labels
 var labelArea = 110;
 
-// padding for the text at the bottom and left axes
+// Define Padding for Left & Bottom Axes
 var tPadBot = 40;
 var tPadLeft = 40;
 
+// Define SVG Container Variable
 var svg = d3
   .select("#scatter")
   .append("svg")
@@ -21,8 +22,10 @@ var svg = d3
   .attr("height", height)
   .attr("class", "chart");
 
+// Define Variable for Circle Radius
 var circRadius;
 
+// Define Function to Define Cirle Radius
 function crGet() {
   if (width <= 530) {
     circRadius = 5;
@@ -32,8 +35,10 @@ function crGet() {
   }
 }
 
+// Call Function to Define Circle Radius
 crGet();
 
+// Load CSV Data
 d3.csv("https://raw.githubusercontent.com/mjknj18/Demographic-Health-Risk-Analysis/master/assets/data/data.csv").then(function(data) {
   visualize(data);
 });
