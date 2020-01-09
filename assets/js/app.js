@@ -49,43 +49,40 @@ function visualize(theData) {
   // Define Variables for Chosen X & Y Axes
   var curX = "poverty";
   var curY = "healthcare";
+
+  // Define Blank Variables for Axis Min & Max Values
   var xMin;
   var xMax;
   var yMin;
   var yMax;
 
-    function xMinMax() {
-        xMin = d3.min(theData, function(d) {
-        return parseFloat(d[curX]) * 0.90})
+  // Define Function to Set X Axis Min & Max
+  function xMinMax() {
+    xMin = d3.min(theData, function(d) {
+    return parseFloat(d[curX]) * 0.90})
 
-        xMax = d3.max(theData, function(d) {
-        return parseFloat(d[curX]) * 1.10})}
+    xMax = d3.max(theData, function(d) {
+    return parseFloat(d[curX]) * 1.10})}
 
-    function yMinMax() {
-        yMin = d3.min(theData, function(d) {
-        return parseFloat(d[curY]) * 0.90})
+  // Define Function to Set Y Axis Min & Max
+  function yMinMax() {
+    yMin = d3.min(theData, function(d) {
+    return parseFloat(d[curY]) * 0.90})
 
-        yMax = d3.max(theData, function(d) {
-        return parseFloat(d[curY]) * 1.10})}
+    yMax = d3.max(theData, function(d) {
+    return parseFloat(d[curY]) * 1.10})}
 
-  // function labelChange(axis, clickedText) {
-  //   d3
-  //     .selectAll(".aText")
-  //     .filter("." + axis)
-  //     .filter(".active")
-  //     .classed("active", false)
-  //     .classed("inactive", true);
-  //   clickedText.classed("inactive", false).classed("active", true);
-  // }
-
+  // Call Functions to Set Axis Min & Max Values
   xMinMax();
   yMinMax();
 
+  // Define Variable for X Axis Range
   var xScale = d3
     .scaleLinear()
     .domain([xMin, xMax])
     .range([margin + labelArea, width - margin]);
 
+  // Define Variable for Y Axis Range
   var yScale = d3
     .scaleLinear()
     .domain([yMin, yMax])
