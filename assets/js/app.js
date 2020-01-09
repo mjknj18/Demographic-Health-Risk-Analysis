@@ -137,8 +137,8 @@ function visualize(theData) {
 
     svg
         .append("text")
-        .attr("x", 0)
-        .attr("y",  200)
+        .attr("x", height / 2 * -1)
+        .attr("y",  width / 2 - 250)
         .text("Lacks Healthcare (%)")
         .attr("font-size", "15px")
         .attr("transform", "translate(0,0) rotate(-90)")
