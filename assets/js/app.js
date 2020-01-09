@@ -88,9 +88,11 @@ function visualize(theData) {
     .domain([yMin, yMax])
     .range([height - margin - labelArea, margin]);
 
+  // Define Variables for Axes & Apply Axis Range Variables
   var xAxis = d3.axisBottom(xScale);
   var yAxis = d3.axisLeft(yScale);
 
+  // Define Function to Set Axis Tick Count
   function tickCount() {
     if (width <= 500) {
       xAxis.ticks(5);
@@ -102,6 +104,7 @@ function visualize(theData) {
     }
   }
 
+  // Call Function to Set Axis Tick Count
   tickCount();
 
   svg
