@@ -130,8 +130,16 @@ function visualize(theData) {
 
     svg
         .append("text")
-        .call(xAxis)             
-        .attr("transform","translate(" + (width/2) + " ," + (height + margin) + ")")
-        .style("text-anchor", "middle")
-        .text("In Poverty (%)");
+        .attr("x", width / 2)
+        .attr("y",  height - labelArea + 15)
+        .text("In Poverty (%)")
+        .attr("font-size", "15px")
+
+    svg
+        .append("text")
+        .attr("x", 0)
+        .attr("y",  200)
+        .text("Lacks Healthcare (%)")
+        .attr("font-size", "15px")
+        .attr("transform", "translate(0,0) rotate(-90)")
 }
