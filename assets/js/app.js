@@ -40,30 +40,26 @@ d3.csv("https://raw.githubusercontent.com/mjknj18/Demographic-Health-Risk-Analys
 });
 
 function visualize(theData) {
-  var curX = "poverty";
-  var curY = "obesity";
-  var xMin;
-  var xMax;
-  var yMin;
-  var yMax;
+    var curX = "poverty";
+    var curY = "healthcare";
+    var xMin;
+    var xMax;
+    var yMin;
+    var yMax;
 
-  function xMinMax() {
-    xMin = d3.min(theData, function(d) {
-      return parseFloat(d[curX]) * 0.90;
-    });
-    xMax = d3.max(theData, function(d) {
-      return parseFloat(d[curX]) * 1.10;
-    });
-  }
+    function xMinMax() {
+        xMin = d3.min(theData, function(d) {
+        return parseFloat(d[curX]) * 0.90})
 
-  function yMinMax() {
-    yMin = d3.min(theData, function(d) {
-      return parseFloat(d[curY]) * 0.90;
-    });
-    yMax = d3.max(theData, function(d) {
-      return parseFloat(d[curY]) * 1.10;
-    });
-  }
+        xMax = d3.max(theData, function(d) {
+        return parseFloat(d[curX]) * 1.10})}
+
+    function yMinMax() {
+        yMin = d3.min(theData, function(d) {
+        return parseFloat(d[curY]) * 0.90})
+
+        yMax = d3.max(theData, function(d) {
+        return parseFloat(d[curY]) * 1.10})}
 
   function labelChange(axis, clickedText) {
     d3
@@ -117,17 +113,18 @@ function visualize(theData) {
     .attr("transform", "translate(" + (margin + labelArea) + ", 0)");
 
   var theCircles = svg.selectAll("g theCircles").data(theData).enter();
-  
-  theCircles
-    .append("circle")
-    .attr("cx", function(d) {
-      return xScale(d[curX]);
-    })
-    .attr("cy", function(d) {
-      return yScale(d[curY]);
-    })
-    .attr("r", circRadius)
-    .attr("class", function(d) {
-      return "stateCircle " + d.abbr;
-    })
+
+    theCircles
+        .append("circle")
+        .attr("cx", function(d) {return xScale(d[curX])})
+        .attr("cy", function(d) {return yScale(d[curY])})
+        .attr("r", circRadius)
+        .attr("class", function(d) {return "stateCircle " + d.abbr})
+
+    theCircles
+        .append("text")
+        .attr("x", function(d) {return xScale(d[curX]) - circRadius/2})
+        .attr("y",  function(d) {return yScale(d[curY]) + circRadius/2})
+        .text(function(d) {return d.abbr})
+        .attr("font-size", "12px")
 }
