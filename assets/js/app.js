@@ -43,13 +43,16 @@ d3.csv("https://raw.githubusercontent.com/mjknj18/Demographic-Health-Risk-Analys
   visualize(data);
 });
 
+// Define Function for Plot Generation
 function visualize(theData) {
-    var curX = "poverty";
-    var curY = "healthcare";
-    var xMin;
-    var xMax;
-    var yMin;
-    var yMax;
+
+  // Define Variables for Chosen X & Y Axes
+  var curX = "poverty";
+  var curY = "healthcare";
+  var xMin;
+  var xMax;
+  var yMin;
+  var yMax;
 
     function xMinMax() {
         xMin = d3.min(theData, function(d) {
@@ -65,15 +68,15 @@ function visualize(theData) {
         yMax = d3.max(theData, function(d) {
         return parseFloat(d[curY]) * 1.10})}
 
-  function labelChange(axis, clickedText) {
-    d3
-      .selectAll(".aText")
-      .filter("." + axis)
-      .filter(".active")
-      .classed("active", false)
-      .classed("inactive", true);
-    clickedText.classed("inactive", false).classed("active", true);
-  }
+  // function labelChange(axis, clickedText) {
+  //   d3
+  //     .selectAll(".aText")
+  //     .filter("." + axis)
+  //     .filter(".active")
+  //     .classed("active", false)
+  //     .classed("inactive", true);
+  //   clickedText.classed("inactive", false).classed("active", true);
+  // }
 
   xMinMax();
   yMinMax();
