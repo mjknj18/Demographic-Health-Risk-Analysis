@@ -124,6 +124,7 @@ function visualize(theData) {
     // Define Variable for All Circle Objects
     var theCircles = svg.selectAll("g theCircles").data(theData).enter();
 
+    // Create Cirlce Object for Each Data Point Pair from Selected Data Sets
     theCircles
         .append("circle")
         .attr("cx", function(d) {return xScale(d[curX])})
@@ -131,6 +132,7 @@ function visualize(theData) {
         .attr("r", circRadius)
         .attr("class", function(d) {return "stateCircle " + d.abbr})
 
+    // Create Text Object for State Abbreviation for Each Data Point Pair
     theCircles
         .append("text")
         .attr("x", function(d) {return xScale(d[curX]) - circRadius/2 - 2.5})
@@ -138,6 +140,7 @@ function visualize(theData) {
         .text(function(d) {return d.abbr})
         .attr("font-size", "10px")
 
+    // Append X Axis Label to Plot
     svg
         .append("text")
         .attr("x", width / 2)
@@ -145,6 +148,7 @@ function visualize(theData) {
         .text("In Poverty (%)")
         .attr("font-size", "15px")
 
+    // Append Y Axis Label to Plot
     svg
         .append("text")
         .attr("x", height / 2 * -1)
