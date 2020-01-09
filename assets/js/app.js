@@ -107,18 +107,21 @@ function visualize(theData) {
   // Call Function to Set Axis Tick Count
   tickCount();
 
+  // Append X Axis to SVG Container
   svg
     .append("g")
     .call(xAxis)
     .attr("class", "xAxis")
     .attr("transform", "translate(0," + (height - margin - labelArea) + ")");
 
+  // Append Y Axis to SVG Container
   svg
     .append("g")
     .call(yAxis)
     .attr("class", "yAxis")
     .attr("transform", "translate(" + (margin + labelArea) + ", 0)");
 
+    // Define Variable for All Circle Objects
     var theCircles = svg.selectAll("g theCircles").data(theData).enter();
 
     theCircles
