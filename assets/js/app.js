@@ -35,7 +35,6 @@ function crGet() {
 crGet();
 
 d3.csv("https://raw.githubusercontent.com/mjknj18/Demographic-Health-Risk-Analysis/master/assets/data/data.csv").then(function(data) {
-  // Visualize the data
   visualize(data);
 });
 
@@ -138,7 +137,7 @@ function visualize(theData) {
     svg
         .append("text")
         .attr("x", height / 2 * -1)
-        .attr("y",  width / 2 - 250)
+        .attr("y",  labelArea - 15)
         .text("Lacks Healthcare (%)")
         .attr("font-size", "15px")
         .attr("transform", "translate(0,0) rotate(-90)")
