@@ -8,7 +8,7 @@ The goal of this project was to use JavaScript to present a visualization of sta
 
 ## Datasets
 
-
+1. https://github.com/mjknj18/Demographic-Health-Risk-Analysis/blob/master/assets/data/data.csv
 
 ## Tasks
 
@@ -16,3 +16,4 @@ The goal of this project was to use JavaScript to present a visualization of sta
 
 ## Results
 
+1. https://github.com/mjknj18/Demographic-Health-Risk-Analysis/blob/master/index.html (Run this file in a browser.)
