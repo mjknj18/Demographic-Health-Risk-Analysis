@@ -12,7 +12,12 @@ The goal of this project was to use JavaScript to present a visualization of sta
 
 ## Tasks
 
-
+1. Import the data from the CSV file.
+2. Set the parameters for the x and y axes.
+3. Plot the x and y axes.
+4. Set the parameters for the circles representing the data for each state.
+5. Plot the circles representing the data for each state.
+6. Add text labels of state abbreviation to each cirlce for identification purposes.
 
 ## Results
 
