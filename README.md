@@ -17,7 +17,7 @@ The goal of this project was to use JavaScript to present a visualization of sta
 3. Plot the x and y axes.
 4. Set the parameters for the circles representing the data for each state.
 5. Plot the circles representing the data for each state.
-6. Add text labels of state abbreviation to each cirlce for identification purposes.
+6. Add a text label of state abbreviation to each circle for identification purposes.
 
 ## Results
 
