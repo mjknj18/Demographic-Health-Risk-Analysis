@@ -4,7 +4,7 @@ The goal of this project was to use JavaScript to present a visualization of pre
 
 ## Questions
 
-1. For each state, what is the relationship between the percentage of the population lacking healthcare and the percentage of the population living in poverty?
+1. For each state, what is the percentage of the population lacking healthcare versus the percentage of the population living in poverty?
 
 ## Datasets
 
