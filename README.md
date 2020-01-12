@@ -17,7 +17,7 @@ The goal of this project was to use JavaScript to present a visualization of pre
 3. Plot the x and y axes.
 4. Set the coordinates and dimensions for the circles representing the data for each state.
 5. Plot the circles representing the data for each state.
-6. Add a text label of each state's abbreviation within each circle for identification purposes.
+6. Add a text label of each state's abbreviation within the appropriate circle for identification purposes.
 
 ## Results
 
