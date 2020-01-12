@@ -13,9 +13,9 @@ The goal of this project was to use JavaScript to present a visualization of pre
 ## Tasks
 
 1. Import the data from the CSV file.
-2. Set the parameters for the x and y axes.
+2. Set the locations and ranges for the x and y axes.
 3. Plot the x and y axes.
-4. Set the parameters for the circles representing the data for each state.
+4. Set the coordinates and dimensions for the circles representing the data for each state.
 5. Plot the circles representing the data for each state.
 6. Add a text label of state abbreviation to each circle for identification purposes.
 
